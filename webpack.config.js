@@ -2,26 +2,26 @@
 const path = require('path');
  
 module.exports = {
-  entry: './src/index.js', // 项目的入口文件
+  entry: './src/index.js',
   output: {
-    filename: 'bundle.js', // 打包后的文件名
-    path: path.resolve(__dirname, 'dist'), // 打包文件放置的目录
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
       {
-        test: /\.css$/, // CSS文件处理
+        test: /\.css$/, 
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/, // 图像文件处理
+        test: /\.(png|svg|jpg|gif)$/, 
         use: ['file-loader'],
       },
       {
-        test: /\.js$/, // JavaScript 文件处理
+        test: /\.js$/, /
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader', // 需要安装babel-loader和@babel/core
+          loader: 'babel-loader', 
           options: {
             presets: ['@babel/preset-env'],
           },
@@ -29,9 +29,7 @@ module.exports = {
       },
     ],
   },
-  // 开发工具
   devtool: 'eval-source-map',
-  // 开发服务器
   devServer: {
     contentBase: './dist',
     open: true,
