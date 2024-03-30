@@ -1,2 +1,2 @@
 # jojo-cli
-a tool
+a quick tool for build execellent project
